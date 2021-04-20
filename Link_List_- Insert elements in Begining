@@ -1,0 +1,30 @@
+class node:
+    def __init__(self, val=None, nex=None):
+        self.val = val
+        self.next = nex
+
+class link:
+    def __init__(self, head=None):
+        self.head = head
+
+    def insert_start(self, val):
+        new_node = node(val)
+        new_node.next = self.head
+        self.head = new_node
+
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.val)
+            temp = temp.next
+
+
+start_element = int(input("Start Element: "))
+end_element = int(input("End Element: "))
+Lead = int(input("Lead: "))
+a = link()
+for i in range(start_element, end_element, Lead):
+    a.insert_start(i)
+
+a.print_list()
+
